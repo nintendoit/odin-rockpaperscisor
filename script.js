@@ -14,7 +14,7 @@ function getComputerChoice(){
 }
 
 function playRound(playerSelection, computerSelection) {
-    playerSelection = playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1);
+    playerSelection = playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1).toLowerCase();
     switch (true) {
         case playerSelection == "Rock" && computerSelection == "Rock":
             x = "It's a tie! Both entered Rock.";
@@ -32,7 +32,7 @@ function playRound(playerSelection, computerSelection) {
             x = "It's a tie! Both entered Paper.";
             break;
         case playerSelection == "Paper" && computerSelection == "Scissor":
-            x = "You lost! Paper beats Scissor";
+            x = "You lost! Scissor beats Paper";
             break;
         case playerSelection == "Scissor" && computerSelection == "Rock":
             x = "You lost! Rock beats Scissor.";
@@ -52,9 +52,17 @@ function playRound(playerSelection, computerSelection) {
     return x;
 }
 
-function game(rounds){
+function game(rounds) {
+    let humanScore = 0, aiScore = 0;
     for (let index = 0; index < rounds; index++) {
-        matchResult = playRound(prompt("Enter your choice: "),getComputerChoice());
+        matchResult = playRound(prompt("Enter your choice: "), getComputerChoice());
         console.log(matchResult);
+        if (matchResult.includes("won")) {
+            humanScore++;
+        } else if (matchResult.includes("lost")) {
+            aiScore++;
+        }
     }
+    let winner = (humanScore > aiScore)? "Human": "ai";
+    console.log(`Match result!\nHuman: ${humanScore}, AI: ${aiScore}\nWinner: ${winner}`)
 }
