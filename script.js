@@ -62,6 +62,9 @@ function winOrLoss(x) {
   }
 }
 
+// =====================================
+// The method to play game in console
+//
 // function game(rounds) {
 //     let humanScore = 0, aiScore = 0;
 //     for (let index = 0; index < rounds; index++) {
@@ -76,6 +79,7 @@ function winOrLoss(x) {
 //     let winner = (humanScore > aiScore)? "Human": "ai";
 //     console.log(`Match result!\nHuman: ${humanScore}, AI: ${aiScore}\nWinner: ${winner}`)
 // }
+// =====================================
 
 const rockButton = document.querySelector("#rockButton");
 const paperButton = document.querySelector("#paperButton");
@@ -95,11 +99,11 @@ rockButton.addEventListener("click", () => {
   const scoreBoard = `\n Human: ${humanScore}  AI: ${aiScore}`;
   // TODO: Make result multi line
   div.textContent += scoreBoard;
-  if (humanScore >= 5) {
+  if (humanScore == 5) {
     const winnerDeclare = " Human won the game!";
     div.textContent += winnerDeclare;
     humanScore = aiScore = 0;
-  } else if (aiScore >= 5) {
+  } else if (aiScore == 5) {
     const winnerDeclare = " AI won the game!";
     div.textContent += winnerDeclare;
     humanScore = aiScore = 0;
@@ -113,11 +117,11 @@ paperButton.addEventListener("click", () => {
   const scoreBoard = `\n Human: ${humanScore}  AI: ${aiScore}`;
   // TODO: Make result multi line
   div.textContent += scoreBoard;
-  if (humanScore >= 5) {
+  if (humanScore == 5) {
     const winnerDeclare = " Human won the game!";
     div.textContent += winnerDeclare;
     humanScore = aiScore = 0;
-  } else if (aiScore >= 5) {
+  } else if (aiScore == 5) {
     const winnerDeclare = " AI won the game!";
     div.textContent += winnerDeclare;
     humanScore = aiScore = 0;
@@ -131,11 +135,11 @@ scissorButton.addEventListener("click", () => {
   const scoreBoard = `\n Human: ${humanScore}  AI: ${aiScore}`;
   // TODO: Make result multi line
   div.textContent += scoreBoard;
-  if (humanScore >= 5) {
+  if (humanScore == 5) {
     const winnerDeclare = " Human won the game!";
     div.textContent += winnerDeclare;
     humanScore = aiScore = 0;
-  } else if (aiScore >= 5) {
+  } else if (aiScore == 5) {
     const winnerDeclare = " AI won the game!";
     div.textContent += winnerDeclare;
     humanScore = aiScore = 0;
